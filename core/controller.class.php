@@ -14,6 +14,8 @@ class Controller {
     
     private $requireLogin = true;
     protected $session = false;
+    private $db = false;
+    private $models = [];
     
     public function __construct($requireLogin = true) {
         $this->requireLogin = $requireLogin;
@@ -28,7 +30,7 @@ class Controller {
         }
     }
     
-    function view($view = "home", $params = [], $template = true, $scripts = []){
+    public function view($view = "home", $params = [], $template = true, $scripts = []){
         $filename = 'view/' . $view . '.php';
         
         if (file_exists($filename)) {
@@ -44,6 +46,32 @@ class Controller {
                 require 'view/template/footer.php';
             }
         }
+    }
+    
+    public function loadModel($name){
+        
+        if (isset($this->models[$name])){
+            return $this->models[$name];
+        } 
+        
+        $filename = "model/" . $name . "_model.class.php";
+    
+        if (file_exists($filename)){
+
+            require_once "core/model.class.php";
+            require_once $filename;
+
+            if (!$this->db) {
+                $this->db = new Database();
+            }
+
+            $model = new $name . "_Model";
+
+            $this->models[$name] = $model;
+
+            return $model;
+        }
+        
     }
 }
 

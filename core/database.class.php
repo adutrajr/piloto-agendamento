@@ -7,10 +7,9 @@
  */
 
 class Database extends PDO {
-    
+            
     public function __construct(){
         parent::__construct(DATABASE_TYPE.':host='.DATABASE_HOST.';dbname='.DATABASE_NAME, DATABASE_USER, DATABASE_PASSWORD);
     }
-    
+   
 }
-
