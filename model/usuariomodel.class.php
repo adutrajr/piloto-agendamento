@@ -6,6 +6,6 @@
  * and open the template in the editor.
  */
 
-public class UsuarioModel {
+class UsuarioModel {
     
 }
