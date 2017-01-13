@@ -1,8 +1,16 @@
+
 <form method="post" action="<?=BASE_URL?>login/logon">
-    <label>Usuário</label><input name="usuario" type="text" value=""/>
-    <label>Senha</label><input name="senha" type="password" value=""/>
-    <input type="submit" value="Enviar" />
-    <?php if(isset($params['mensagem'])) { ?>
-    <p><?=$params['mensagem']?></p>
-    <?php } ?>
-</form> 
+    <h1>Login</h1>
+    <p>
+        <label for=usuario"">Usuário</label>
+        <input name="usuario" type="text" value=""/>
+    </p>
+    <p>
+        <label for="senha">Senha</label>
+        <input name="senha" type="password" value=""/>
+    </p>
+    <p><input class="botao" type="submit" value="Enviar" /></p>
+</form>
+<?php if(isset($params['mensagem'])) { ?>
+<p class="mensagem"><?=$params['mensagem']?></p>
+<?php } ?>

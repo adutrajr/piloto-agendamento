@@ -1,21 +1,111 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 04/01/2017, 18:11:57
-    Author     : adriano
-*/
+/**
+ * Arquivo CSS padrão, aqui devem ficar as regras globais usadas em todo o 
+ * sistema, tamanhos para títulos, tipos de fonte padrão, etc.
+ * As regras de formatação para o template devem ficar aqui também.
+ * Ainda é um rascunho, não sei se funciona nos outros navegadores, só testei no 
+ * Chrome.
+ * 
+ * 04/01/2017 adriano
+ */
 
 b { color: red; }
 
-body { background-color: silver; padding: 0; margin: 0; }
+body { 
+    background-color: #fff; 
+    padding: 0; 
+    margin: 0; 
+    font-family: sans-serif; 
+    font-size: 12px; 
+}
 
-#box { width: 90%; position: relative; left: 50%; margin-left: -45%; }
+#box { 
+    width: 100%;
+    min-height: 100%;
+}
 
-#header { width: 100%; background-color: yellow; padding: 20px; }
+#header {     
+    background-color: #e9e9e9;
+    padding: 20px; 
+    border-bottom: 1px solid silver;
+}
 
-#footer { width: 100%; background-color: green; padding: 20px; }
+#footer {
+    bottom: 0;
+    position: absolute;
+    border-top: 1px solid silver;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(5%, silver)) !important;
+    background-color: #e9e9e9;    
+    color: white;
+    padding: 20px 0 20px 0;
+    width: 100%;
+}
 
-#body { width: 100%; background-color: white; padding: 20px; }
+#footer p {
+    margin: 0 20px 0 20px;
+    padding: 0;
+}
+
+#body {     
+    background-color: white; 
+    padding: 20px; 
+}
+
+form {    
+    width: 350px;    
+    background-color: white;
+    border: solid 1px silver;
+    border-radius: 5px;
+    padding: 0 20px 20px 20px;
+    box-shadow: 0 1px 3px silver;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e9e9e9), color-stop(25%, white)) !important;
+    background-color: #e9e9e9;
+}
+
+form h1 {
+    color: #666;
+}
+
+form label { 
+    display: inline-block; 
+    width: 80px; 
+}
+
+p.mensagem {
+    width: 350px;
+    padding: 10px;
+    padding-left: 30px;
+    border-radius: 5px;
+    border: 1px solid gold;
+    
+    background-image: url(../images/error.png);
+    background-repeat: no-repeat;
+    background-position: 7px center;
+    background-color: lemonchiffon;
+    box-shadow:  0 1px 1px orange;
+}
+
+/* garante que a caixa de mensagem quando aparecer estará alinhada ao formulário
+de login */
+form, p.mensagem {
+    position: relative;
+    left: 50%;
+    margin-left: -225px;
+}
+
+input[type=submit] {
+    padding: 10px 20px;
+    border: 1px solid blue;
+    border-radius: 5px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,lightblue), color-stop(25%,blue), color-stop(75%,blue), color-stop(100%,lightblue)) !important;
+    box-shadow: inset 0 1px 2px #fff, 0px 1px 2px #666;    
+    text-shadow: 0 1px 0 #666;
+    color: white;
+    font-weight: bold;
+}
+
+input[type=text],input[type=password]{
+    padding: 4px;
+    border: 1px solid lightslategrey;
+    border-radius: 3px;
+    box-shadow:  0 1px 2px silver;
+}

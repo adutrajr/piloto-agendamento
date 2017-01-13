@@ -8,7 +8,9 @@
  */
 ?>
 </div>
-            <div id="footer">Footer</div>
+            <div id="footer">
+                <p>Footer</p>
+            </div>
         </div>
     </body>
 </html>
